@@ -16,8 +16,8 @@ jobs:
               uses: pozil/auto-assign-issue@v1.12.0
               with:
                   repo-token: ${{ secrets.PERSONAL_TOKEN_FOR_GITHUB_ACTION }}
-                  # assignees: ${{ vars.DEFAULT_ISSUE_ASSIGNEE }}
-                  teams: ${{ vars.DEFAULT_ISSUE_TEAMS }}
+                  assignees: ${{ vars.DEFAULT_ISSUE_ASSIGNEE }}
+                  # teams: ${{ vars.DEFAULT_ISSUE_TEAMS }}
                   numOfAssignee: 1
                   allowSelfAssign: false
                   abortIfPreviousAssignees: true
