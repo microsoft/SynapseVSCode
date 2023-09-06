@@ -1,0 +1,23 @@
+name: Issue & PR assignment
+
+on:
+    issues:
+        types: [opened]
+    pull_request:
+        types: [opened, edited, synchronize, reopened]
+
+jobs:
+    auto-assign:
+        runs-on: ubuntu-latest
+        permissions:
+            issues: write
+        steps:
+            - name: "Auto-assign issue"
+              uses: pozil/auto-assign-issue@v1.12.0
+              with:
+                  repo-token: ${{ secrets.PERSONAL_TOKEN_FOR_GITHUB_ACTION }}
+                  assignees: ${{ vars.DEFAULT_ISSUE_ASSIGNEE }}
+                  # teams: ${{ vars.DEFAULT_ISSUE_TEAMS }}
+                  numOfAssignee: 1
+                  allowSelfAssign: false
+                  abortIfPreviousAssignees: true
