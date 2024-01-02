@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  dev-synapse:
+    container_name: mariner-synapse-fabric-conatiner
+    build:
+      context: ./
+      dockerfile: ./mariner/Dockerfile
+      args:
+        - ACCEPT_EULA=Y
+    ports:
+      - 127.0.0.1:8888:20
+    volumes:
+      - ..:/code/
+    environment:
+      DEV: 'True'

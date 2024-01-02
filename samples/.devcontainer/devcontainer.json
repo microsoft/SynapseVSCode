@@ -1,0 +1,24 @@
+{
+	"name": "Fabric PySpark local cluster",
+	"dockerComposeFile": ["./docker-compose.yaml"],
+    "workspaceFolder": "/code",
+    "service": "dev-synapse",
+    "customizations": {
+        "vscode" : {
+            "settings": {
+                "python.defaultInterpreterPath": "/opt/conda/bin/python",
+                "terminal.integrated.profiles.linux": {
+                    "bash": {
+                        "path": "/bin/bash"
+                    }
+                },
+                "terminal.integrated.defaultProfile.linux":  "bash",
+                "python.linting.enabled": true,
+                "python.linting.pylintEnabled": true
+            },
+            "extensions": [
+                "ms-python.python", "ms-toolsai.jupyter", "synapsevscode.synapse"
+            ]
+        }
+    }
+}
