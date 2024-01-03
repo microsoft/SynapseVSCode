@@ -25,8 +25,9 @@ RUN tdnf install -y openssh-server nc \
  && echo 'root:password' | chpasswd \
  && sed -i 's/\#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
-# Pre install a pyspark in conda base env.
-RUN pip install pyspark==3.4.1
+# Install PySpark in the base Conda environment
+ENV SPARK_VERSION=3.4.1
+RUN conda install -c conda-forge pyspark==$SPARK_VERSION
 
 # Generate new host keys
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key && \

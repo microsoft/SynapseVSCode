@@ -3,6 +3,17 @@
 	"dockerComposeFile": ["./docker-compose.yaml"],
     "workspaceFolder": "/code",
     "service": "dev-synapse",
+    "forwardPorts": [4040, 4041],
+    "portsAttributes": {
+        "4040": {
+            "label": "web",
+            "onAutoForward": "notify"
+        },
+        "4041": {
+            "label": "web",
+            "onAutoForward": "notify"
+        }
+    },
     "customizations": {
         "vscode" : {
             "settings": {
