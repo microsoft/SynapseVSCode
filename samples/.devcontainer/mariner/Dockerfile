@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/msfabric/synapsevscode/fabric-synapse-vscode:v2.0.6
 
-
+RUN tdnf install -y gawk
 RUN tdnf install -y wget
 RUN tdnf install -y wget tar
 
